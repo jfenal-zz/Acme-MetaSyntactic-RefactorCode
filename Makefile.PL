@@ -10,6 +10,8 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
         'Test::More' => 0,
+        'Acme::MetaSyntactic' => 0,
+        'B::Deobfuscate' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Acme-MetaSyntactic-RefactorCode-*' },

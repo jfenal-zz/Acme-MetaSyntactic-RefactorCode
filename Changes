@@ -1,5 +1,12 @@
 Revision history for Acme-MetaSyntactic-RefactorCode
 
-0.01    Date/time
-        First version, released on an unsuspecting world.
+0.01    March 15, 2005
+        First version, quick and dirty hack
+
+0.02    March 16,2005
+        Clean up package.
+        Set dependancies in Build.PL & Makefile.PL
+        Set the package description in the .pm's pod.
+        Configurable themes from AMS
+        Make it really work...
 

@@ -9,6 +9,8 @@ my $builder = Module::Build->new(
     dist_version_from   => 'lib/Acme/MetaSyntactic/RefactorCode.pm',
     requires => {
         'Test::More' => 0,
+        'Acme::MetaSyntactic' => 0,
+        'B::Deobfuscate' => 0,
     },
     add_to_cleanup      => [ 'Acme-MetaSyntactic-RefactorCode-*', '*~', '*/*~', '*/*/*/*~' ],
     gzip => 'gzip -9f',
