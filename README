@@ -1,0 +1,25 @@
+Acme-MetaSyntactic-RefactorCode
+
+One of Acme::MetaSyntactic aims is to provide an easy way to produce variable
+name. Let's industrialize the process on existing code.
+
+Heavily based on both the idea and the code of Acme::Floral by Joshua b. Jore.
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+
+COPYRIGHT AND LICENCE
+
+Put the correct copyright and licence information here.
+
+Copyright (C) 2005 Jerome Fenal
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
