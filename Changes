@@ -3,10 +3,15 @@ Revision history for Acme-MetaSyntactic-RefactorCode
 0.01    March 15, 2005
         First version, quick and dirty hack
 
-0.02    March 16,2005
+0.02    March 16, 2005
         Clean up package.
-        Set dependancies in Build.PL & Makefile.PL
+        Set dependancies in Build.PL & Makefile.PL.
         Set the package description in the .pm's pod.
-        Configurable themes from AMS
+        Configurable themes from AMS.
         Make it really work...
+
+0.03    Dec 6th, 2006
+        Applied patches by Adriano Ferreira.
+        Added kwalitee.t test.
+        
 

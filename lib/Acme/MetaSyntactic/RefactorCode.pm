@@ -2,9 +2,8 @@ package Acme::MetaSyntactic::RefactorCode;
 
 use warnings;
 use strict;
-use base 'B::Deobfuscate';
+use B::Deobfuscate 0.14;
 use Acme::MetaSyntactic;
-use Data::Dumper;
 use Getopt::Std;
 
 =head1 NAME
@@ -13,11 +12,11 @@ Acme::MetaSyntactic::RefactorCode - Theme and refactor your code!
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+my $VERSION = '0.03';
 
 =head1 SYNOPSIS
 
@@ -44,22 +43,15 @@ C<Acme::MetaSyntactic> by BooK.
 
 =cut
 
-
 BEGIN { 
     our ( $opt_t );
     getopt('t:');
     $opt_t = "loremipsum" if not Acme::MetaSyntactic->has_theme($opt_t);
-    my $meta = Acme::MetaSyntactic->new( $opt_t );
-    open *B::Deobfuscate::DATA, "<:scalar", \join( "\n",
-        # Circumvent broken API that force to type more than needed, not
-        # counting this very comment               +
-        #                                          |
-        # some themes may have duplicates          |
-        #    v                                     v
-        keys %{ {map { ( $_ => 1 ) } $meta->name($opt_t => 0) } } )  ;
+    $B::Deobfuscate::Dict::RefactorCode::theme = $opt_t;
+
 }
 
-sub import { require O; O->import( 'Deobfuscate', @_ ); }
+sub import { require O; O->import( 'Deobfuscate', '-DRefactorCode', @_ ); }
 
 =head1 AUTHOR
 
@@ -74,7 +66,7 @@ B::Deobfuscate seems also to have problems with big code chunks (tried it on the
 future 0.02 L<Solaris::Disk::SVM>), some methods calls not being translated.
 
 Please report any other bugs or feature requests to
-C<bug-acme-metasyntactic-refacecode@rt.cpan.org>, or through the web interface at
+C<bug-acme-metasyntactic-refactorcode@rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Acme-MetaSyntactic-RefactorCode>.
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
@@ -86,6 +78,10 @@ Jore.
 
 This module could not have happened without the L<Acme::MetaSyntactic> module by
 Philippe "BooK" Bruhat.
+
+Many thanks to Adriano Ferreira who sent a patch to make AMSRC work
+under newer version of L<B::Deobfuscate>. See RT at
+L<http://rt.cpan.org/Ticket/Display.html?id=23700> for full details.
 
 =head1 COPYRIGHT & LICENSE
 

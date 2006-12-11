@@ -1,16 +1,24 @@
---- #YAML:1.0
+---
 name: Acme-MetaSyntactic-RefactorCode
-version: 0.02
+version: 0.03
 author:
-  - Jerome Fenal <jfenal@free.fr>
+  - 'Jerome Fenal <jfenal@free.fr>'
 abstract: Theme and refactor your code!
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
   Acme::MetaSyntactic: 0
-  B::Deobfuscate: 0
+  B::Deobfuscate: 0.14
+  B::Keywords: 0
   Test::More: 0
 provides:
   Acme::MetaSyntactic::RefactorCode:
     file: lib/Acme/MetaSyntactic/RefactorCode.pm
-    version: 0.02
-generated_by: Module::Build version 0.26
+    version: ~
+  B::Deobfuscate::Dict::RefactorCode:
+    file: lib/B/Deobfuscate/Dict/RefactorCode.pm
+generated_by: Module::Build version 0.2805
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2

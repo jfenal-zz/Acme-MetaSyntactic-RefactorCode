@@ -5,6 +5,9 @@ Build.PL
 Makefile.PL
 README
 lib/Acme/MetaSyntactic/RefactorCode.pm
+lib/B/Deobfuscate/Dict/RefactorCode.pm
 t/00-load.t
+t/kwalitee.t
 t/pod-coverage.t
 t/pod.t
+t/distchk.t
