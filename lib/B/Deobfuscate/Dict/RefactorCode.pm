@@ -8,9 +8,11 @@ use vars qw($theme);
 
 use Acme::MetaSyntactic;
 
+our VERSION = '0.04';
+
 =head1 NAME
 
-B::Deobfuscate::Dict::RefactorCode
+B::Deobfuscate::Dict::RefactorCode - B:: helper for A::MS::RefactorCode
 
 =head1 SYNOPSIS
 

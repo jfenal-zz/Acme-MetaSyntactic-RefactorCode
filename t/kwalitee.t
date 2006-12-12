@@ -1,3 +1,6 @@
-eval { require Test::Kwalitee };
-exit if $@;
-Test::Kwalitee->import;
+use Test::More;
+
+eval { require Test::Kwalitee; Test::Kwalitee->import; };
+
+plan( skip_all => 'Test::Kwalitee not installed; skipping' ) if $@;
+

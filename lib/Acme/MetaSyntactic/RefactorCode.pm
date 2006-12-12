@@ -12,11 +12,11 @@ Acme::MetaSyntactic::RefactorCode - Theme and refactor your code!
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-my $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 SYNOPSIS
 
@@ -50,6 +50,14 @@ BEGIN {
     $B::Deobfuscate::Dict::RefactorCode::theme = $opt_t;
 
 }
+
+=head2 import
+
+This function is automatically called at import time, and uses
+L<O::Deobfuscate> and L<B::Deobfuscate::Dict::RefactorCode> to rewrite
+the code with the theme specified with the C<-t> CLI option.
+
+=cut
 
 sub import { require O; O->import( 'Deobfuscate', '-DRefactorCode', @_ ); }
 
